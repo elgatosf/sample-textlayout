@@ -9,8 +9,9 @@
 
 // Action Cache
 const MACTIONS = {};
+const MTEXTS = [];
 const MAXNUMLINES = 5;
-const UPDATE_INTERVAL = 5000;
+const UPDATE_INTERVAL = 2500;
 // Utilities
 const cycle = (idx, min, max) => (idx > max ? min : idx < min ? max : idx);
 const randomDate = () => {
@@ -82,11 +83,20 @@ class SampleAction {
     }
 
     init() {
-        const updateFn = this.update;
+        this.empty();
         this.interval = setInterval(() => {
             this.update();
         }, UPDATE_INTERVAL);
     }
+
+    empty() {
+      const payload = {};
+      for(let i = 0;i < MAXNUMLINES;i++) {
+          payload[`customtext${i}`] = '';
+      };
+      $SD.setFeedback(this.context, payload);
+      MTEXTS.splice(0, MTEXTS.length);
+  }
 
     clearRotation() {
         this.isInteracting = false;
@@ -110,9 +120,12 @@ class SampleAction {
     update() {
         if(this.isInteracting) return;
         const payload = {};
-        [0,1,2,3,4].forEach((i) => {
-            payload[`customtext${i}`] = randomDate();
-        });
+        MTEXTS.push(randomDate());
+        if(MTEXTS.length > MAXNUMLINES) MTEXTS.shift();
+        const num = Math.min(MTEXTS.length, MAXNUMLINES);
+        for(let i = 0;i < num;i++) {
+            payload[`customtext${i}`] = MTEXTS[i];
+        };
         $SD.setFeedback(this.context, payload);
     }
 };
