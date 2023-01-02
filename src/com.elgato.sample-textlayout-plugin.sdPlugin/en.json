@@ -1,0 +1,12 @@
+{
+	"Description": "Create a test layout.", 
+	"Name": "Sample Text Layout",
+	"Category": "Samples",
+	"com.elgato.sample-textlayout.action": {
+		"Name": "Sample Text Layout",
+		"Tooltip": "How to create a text layout."
+	},
+	"Localization": {
+		"None": "None"
+	}
+}

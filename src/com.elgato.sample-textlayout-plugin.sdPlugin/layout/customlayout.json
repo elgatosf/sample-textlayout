@@ -1,10 +1,3 @@
-# A Sample Text Layout Stream Deck Plugin
-
-This is a sample plugin that demonstrates how to create list of strings as a `layout` shown on Stream Deck's touch-panel.
-
-![Screenshot](screenshot.png)
-
-```
 {
     "id": "com.elgato.sample-textlayout.action.layout",
     "items": [
@@ -50,5 +43,3 @@ This is a sample plugin that demonstrates how to create list of strings as a `la
        
     ]
 }
-```
-
