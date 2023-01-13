@@ -1,6 +1,6 @@
 # A Sample Text Layout Stream Deck Plugin
 
-This is a StreamDeck + sample plugin that demonstrates how to create a list of string as a `layout` shown on Stream Deck's touch-panel.
+This is a StreamDeck + sample plugin that demonstrates how to create a list of strings as a `layout` shown on Stream Deck's touch-panel and how to update those strings efficiently.
 
 ![Screenshot](screenshot.png)
 
