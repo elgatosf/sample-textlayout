@@ -7,7 +7,7 @@
             "font": { "size": 16, "weight": 500 },
             "rect": [8, 4, 192, 17],
             "alignment": "left",
-            "z-order": 5
+            "zOrder": 5
           },
           {
             "key": "customtext1",
